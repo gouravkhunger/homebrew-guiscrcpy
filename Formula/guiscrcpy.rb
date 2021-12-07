@@ -7,7 +7,6 @@ class Guiscrcpy < Formula
 
   depends_on "poetry"
   depends_on "scrcpy"
-  depends_on cask: "android-platform-tools"
 
   on_macos do
     if Hardware::CPU.intel?
@@ -16,6 +15,14 @@ class Guiscrcpy < Formula
         system "poetry", "install", "-E", "PySide2"
       end
     end
+  end
+  
+  def caveats
+    <<~EOS
+      At runtime, adb must be accessible from your PATH.
+      You can install adb from Homebrew Cask:
+        brew install --cask android-platform-tools
+    EOS
   end
 
   test do
