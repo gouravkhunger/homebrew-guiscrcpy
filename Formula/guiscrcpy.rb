@@ -7,13 +7,13 @@ class Guiscrcpy < Formula
 
   depends_on "poetry"
   depends_on "scrcpy"
+  conflicts_with "python@3.9", because: "Imcompatiny with QtPy."
+  conflicts_with "python@3.10", because: "Imcompatiny with QtPy."
 
   on_macos do
-    if Hardware::CPU.intel?
-      def install
-        system "poetry", "env", "use", "/usr/bin/python3"
-        system "poetry", "install", "-E", "PySide2"
-      end
+    def install
+      system "poetry", "env", "use", "/usr/bin/python3"
+      system "arch", "-x86_64", "poetry", "install", "-E", "PySide2"
     end
   end
   
