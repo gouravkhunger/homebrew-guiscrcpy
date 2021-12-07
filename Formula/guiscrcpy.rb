@@ -7,7 +7,7 @@ class Guiscrcpy < Formula
 
   depends_on "poetry"
   depends_on "scrcpy"
-  depends_on "android-platform-tools"
+  depends_on cask: "android-platform-tools"
 
   on_macos do
     if Hardware::CPU.intel?
