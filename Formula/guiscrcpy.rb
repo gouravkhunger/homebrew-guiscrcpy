@@ -7,8 +7,8 @@ class Guiscrcpy < Formula
 
   depends_on "poetry"
   depends_on "scrcpy"
-  conflicts_with "python@3.9", because: "Imcompatiny with QtPy."
-  conflicts_with "python@3.10", because: "Imcompatiny with QtPy."
+  conflicts_with "python@3.9", because: "Incompatible with QtPy."
+  conflicts_with "python@3.10", because: "Incompatible with QtPy."
 
   on_macos do
     def install
